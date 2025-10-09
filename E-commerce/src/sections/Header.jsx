@@ -54,9 +54,35 @@ const Header = () => {
       <ul className='lg:flex  justify-center items-center gap-10 hidden'>
         {navItems.map(({link,path})=>(
           <Link key={path} className='text-black text-sm uppercase font-semibold cursor-pointer px-4 py-2 rounded-lg hover:bg-purple-400 hover:text-white' to={path} spy={true} offset={-100} smooth={true}>{link}</Link> 
-
         ))}
       </ul>
+      <div id="header-icons" className='lg:flex hidden justify-center items-center gap-6 text-black'>
+        <FaSearch className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-purple-400'/>
+        <IoPerson className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-purple-400'/>
+        <FaHeart className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-purple-400'/>
+        <div className='relative'>
+          <FaShoppingCart className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-purple-400'/>
+          <div className='bg-purple-400 hover:bg-yellow-400 text-white hover:text-black rounded-full absolute -top-[24px] -right-[15px] text-[14px] font-bold'>2</div>
+        </div>
+      </div>
+      {/* mobile menu starts  here */}
+      <div className='flex justify-center items-center lg:hidden mt-3' onClick={toggleMenu}>
+        <div>
+          {
+          isMenuOpen ? <FaXmark className='text-purple-400 text-3x1 cursor-pointer'/>:<FaBars className='text-purple-400 text-3x1 cursor-pointer' />
+          }
+        </div>
+      </div>
+      <div className={`${isMenuOpen ? 'flex':'hidden'} w-full h-fit bg-purple-400 p-4 absolute top-[80px] left-0`} onClick={closeMenu}>
+        <ul className='flex  flex-col justify-center items-center gap-2 w-full'>
+          {navItems.map(({link,path})=>{
+            <Link key={path} className='text-white uppercase font-semibold cursor-pointer p-3 rounded-lg hover:bg-yellow-400 hover:text-black w-full text-center ' to={path} spy={true} offset ={-100} smoooth={true} >
+              {link}
+            </Link>
+          })}
+        </ul>
+
+      </div>
     </nav>
     </>
   )
