@@ -27,13 +27,13 @@ const Header = () => {
     }
     const navItems=[
       {
-        link:"Home",path:'home'
+        link:"Home",path:'Hero'
       },
       {
-        link:"About",path:'about'
+        link:"About",path:'category'
       },
       {
-        link:"Products",path:'products'
+        link:"Products",path:'Products'
       },
       {
         link:"Testimonials",path:'testimonials'
@@ -75,11 +75,18 @@ const Header = () => {
       </div>
       <div className={`${isMenuOpen ? 'flex':'hidden'} w-full h-fit bg-purple-400 p-4 absolute top-[80px] left-0`} onClick={closeMenu}>
         <ul className='flex  flex-col justify-center items-center gap-2 w-full'>
-          {navItems.map(({link,path})=>{
-            <Link key={path} className='text-white uppercase font-semibold cursor-pointer p-3 rounded-lg hover:bg-yellow-400 hover:text-black w-full text-center ' to={path} spy={true} offset ={-100} smoooth={true} >
+          {navItems.map(({link,path}) => (
+            <Link
+              key={path}
+              className='text-white uppercase font-semibold cursor-pointer p-3 rounded-lg hover:bg-yellow-400 hover:text-black w-full text-center'
+              to={path}
+              spy={true}
+              offset={-100}
+              smooth={true}
+            >
               {link}
             </Link>
-          })}
+          ))}
         </ul>
 
       </div>

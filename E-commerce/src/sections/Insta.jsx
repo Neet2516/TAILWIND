@@ -18,7 +18,8 @@ const Insta = () => {
   
       AOS.refresh();
   
-    }, [])
+    },[])
+    
   return (
     <div className='w-full lg:px-20 px-5 py=[80px] bg-white flex flex-col justify-center items-center gap-4'>
       <h1 data-aos ="zoom-in" data-aos-delay="100"  className='text-purple-400 text-xl font-semibold capitalize'>Our Instagram Shop</h1>
@@ -31,7 +32,7 @@ const Insta = () => {
         <img src={insta5} alt="" className='rounded-lg'/>
         <img src={insta6} alt="" className='rounded-lg'/>
       </div>
-      <button data-aos="zoom-in" data-aos-delay="100" className = 'bg-purple-400 hover:bg-yellow-400 text-white hover:text-black font-semibold px-8  py-3 rounded-lg mt-12 uppercase'>#ELectrnic Shop</button>
+      <button data-aos="zoom-in" data-aos-delay="100" className = 'bg-purple-400 hover:bg-yellow-400 text-white hover:text-black font-semibold px-8  py-3 rounded-lg mt-12 uppercase'>ELectrnic Shop</button>
       {/* I am not getting why this button is  not displaying  */}
     </div>
   )
